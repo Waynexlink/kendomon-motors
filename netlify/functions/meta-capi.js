@@ -63,6 +63,7 @@ exports.handler = async (event) => {
         },
       },
     ],
+    test_event_code: "TEST79076",
   };
 
   try {
