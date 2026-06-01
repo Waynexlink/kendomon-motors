@@ -392,7 +392,7 @@ const preloadedImage = allImages.length > 0 ? allImages[0] : undefined;
 
   // 2. Netlify function fires with the same eventId
   // This runs in the background - it does not slow down the WhatsApp redirect
-  fetch('/netlify/functions/meta-capi', {
+  fetch('/.netlify/functions/meta-capi', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
