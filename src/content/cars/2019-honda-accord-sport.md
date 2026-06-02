@@ -4,7 +4,7 @@ model: Accord Sport Edition
 year: 2019
 price: 25000000
 transmission: Automatic
-condition: Foreign Used
+condition: Nigerian Used
 location: "Gwarinpa, Abuja"
 description: "Just arriving — 2019 Honda Accord Sport Edition. Clean title, foreign used, now available for inspection."
 heroImage: "./WhatsApp Image 2026-05-24 at 8.09.18 AM-hero.jpeg"

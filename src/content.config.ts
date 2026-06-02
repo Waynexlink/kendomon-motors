@@ -42,7 +42,7 @@ const carsCollection = defineCollection({
 
       // conditions
       condition: z
-        .enum(["Locally Used", "Foreign Used"])
+        .enum(["Nigerian Used", "Foreign Used"])
         .optional()
         .default("Foreign Used"),
       location: z.string().optional(),
