@@ -147,7 +147,10 @@ const ogImageUrl = preloadedImage
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
-      fbq("init", "1022412380234432");
+      fbq("init", "1022412380234432", {
+        em: "email@email.com", // Replace with your user's actual email variable
+        ph: "1234567890", // Replace with your user's actual phone variable
+      });
       fbq("track", "PageView");
     </script>
     <noscript
