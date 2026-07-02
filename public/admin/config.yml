@@ -52,56 +52,13 @@ collections:
       - { label: "Make", name: "make", widget: "string" }
       - { label: "Model", name: "model", widget: "string" }
       - { label: "Year", name: "year", widget: "number", value_type: "int" }
-      - {
-          label: "Price (₦)",
-          name: "price",
-          widget: "number",
-          value_type: "float",
-        }
-      - {
-          label: "Transmission",
-          name: "transmission",
-          widget: "select",
-          options: ["Automatic", "Manual"],
-        }
-      - {
-          label: "Condition",
-          name: "condition",
-          widget: "select",
-          options: ["Locally Used", "Foreign Used"],
-          default: "Foreign Used",
-        }
-      - {
-          label: "Location",
-          name: "location",
-          widget: "string",
-          required: false,
-          default: "Gwarinpa, Abuja",
-        }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "text",
-          required: false,
-        }
+      - { label: "Price (₦)", name: "price", widget: "number", value_type: "float" }
+      - { label: "Transmission", name: "transmission", widget: "select", options: ["Automatic", "Manual"] }
+      - { label: "Condition", name: "condition", widget: "select", options: ["Locally Used", "Foreign Used"], default: "Foreign Used" }
+      - { label: "Location", name: "location", widget: "string", required: false, default: "Gwarinpa, Abuja" }
+      - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Hero Image", name: "heroImage", widget: "image" }
-      - {
-          label: "Hero Image Alt",
-          name: "heroImageAlt",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Gallery Images",
-          name: "galleryImages",
-          widget: "list",
-          field: { widget: "image" },
-          required: false,
-        }
-      - {
-          label: "Featured",
-          name: "featured",
-          widget: "boolean",
-          default: false,
-        }
+      - { label: "Hero Image Alt", name: "heroImageAlt", widget: "string", required: false }
+      - { label: "Gallery Images", name: "galleryImages", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Publish Date", name: "publishDate", widget: "datetime" }
