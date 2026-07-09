@@ -4,7 +4,7 @@ model: C300
 year: 2008
 price: 8000000
 transmission: Automatic
-condition: Locally Used
+condition: Nigerian Used
 location: Gwarinpa, Abuja
 description: Sharpest First Body Nigerian Used 2008 Model Mercedes Benz,
   Untempered system with Premium Performance and clean interior Now available.
