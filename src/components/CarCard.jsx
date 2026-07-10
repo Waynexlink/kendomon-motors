@@ -10,7 +10,8 @@ export default function CarCard({ car }) {
   };
 
   const condition = car.condition || "Foreign Used";
-  const isLocal = condition === "Locally Used";
+  const isLocal = condition === "Nigerian Used";
+  const isSold = car.status === "Sold";
 
   return (
     <article className={styles.carCard}>
@@ -18,6 +19,15 @@ export default function CarCard({ car }) {
         {/* Image Section */}
         <div className={styles.imageSection}>
           <div className={styles.imageOverlay}></div>
+          {isSold && (
+            <div className={styles.soldOverlay}>
+              <img
+                src="/assets/images/sold-stamp-3.png"
+                alt="Sold"
+                className={styles.soldStampImg}
+              />
+            </div>
+          )}
           <img
             src={car.heroImage.src || "/placeholder.svg"}
             alt={car.heroImageAlt}

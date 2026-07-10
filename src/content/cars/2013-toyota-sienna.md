@@ -4,6 +4,7 @@ model: Sienna XLE
 year: 2013
 price: 17800000
 transmission: Automatic
+status: Sold
 condition: Foreign Used
 location: Abuja
 heroImage: /src/content/cars/2013 BelgiumXLEToyota Seinahero.jpeg

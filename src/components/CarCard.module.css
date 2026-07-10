@@ -82,6 +82,32 @@
   text-overflow: ellipsis;
 }
 
+/* Sold Overlay */
+.soldOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: grayscale(100%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soldStampImg {
+  width: 55%;
+  max-width: 220px;
+  height: auto;
+  transform: rotate(-15deg);
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
+}
+
+@media screen and (max-width: 480px) {
+  .soldStampImg {
+    max-width: 150px;
+  }
+}
+
 /* Pill Bar */
 .infoBar {
   display: flex;

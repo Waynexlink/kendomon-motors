@@ -46,9 +46,16 @@ if (filterMaxPrice) {
 }
 
 // Sort by newest first
-const sortedCars = filteredCars.sort(
-  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime(),
-);
+// Sort by status first (Available before Sold), then by newest
+const sortedCars = filteredCars.sort((a, b) => {
+  const statusA = a.data.status || "Available";
+  const statusB = b.data.status || "Available";
+
+  if (statusA !== statusB) {
+    return statusA === "Available" ? -1 : 1;
+  }
+  return b.data.publishDate.getTime() - a.data.publishDate.getTime();
+});
 
 // Prepare car data for the React component
 const carsData = sortedCars.map((car) => {
@@ -65,6 +72,7 @@ const carsData = sortedCars.map((car) => {
     heroImageAlt: car.data.heroImageAlt,
     condition: car.data.condition,
     featured: car.data.featured,
+    status: car.data.status || "Available",
   };
 });
 

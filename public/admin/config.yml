@@ -59,6 +59,13 @@ collections:
           value_type: "float",
         }
       - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          options: ["Available", "Sold"],
+          default: "Available",
+        }
+      - {
           label: "Transmission",
           name: "transmission",
           widget: "select",

@@ -40,6 +40,9 @@ const carsCollection = defineCollection({
       heroImageAlt: z.string().optional(),
       galleryImages: z.array(image()).max(10).optional(),
 
+      // availability
+      status: z.enum(["Available", "Sold"]).optional().default("Available"),
+
       // conditions
       condition: z
         .enum(["Nigerian Used", "Foreign Used"])
