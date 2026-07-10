@@ -48,6 +48,8 @@ collections:
     folder: "src/content/cars"
     create: true
     slug: "{{year}}-{{make}}-{{model}}"
+    summary: "{{year}} {{make}} {{model}} — ₦{{price}} ({{status}})"
+    sortable_fields: ["publishDate", "make", "price", "status"]
     fields:
       - { label: "Make", name: "make", widget: "string" }
       - { label: "Model", name: "model", widget: "string" }
