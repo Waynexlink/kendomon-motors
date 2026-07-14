@@ -1,7 +1,7 @@
 ---
 make: Toyota
 model: Camry LE
-year: 2011
+year: 2012
 price: 9500000
 status: Available
 transmission: Automatic
