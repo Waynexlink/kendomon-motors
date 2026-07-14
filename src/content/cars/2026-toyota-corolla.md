@@ -2,7 +2,7 @@
 make: Toyota
 model: Corolla
 year: 2014
-price: 14499998
+price: 14500000
 status: Available
 transmission: Automatic
 condition: Foreign Used
