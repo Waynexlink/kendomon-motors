@@ -2,7 +2,7 @@
 make: "Toyota "
 model: Venza
 year: 2011
-price: 16999998
+price: 17000000
 status: Available
 transmission: Automatic
 condition: Foreign Used
