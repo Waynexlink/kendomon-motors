@@ -2,7 +2,7 @@
 make: "Toyota "
 model: Camry
 year: 2013
-price: 8899999
+price: 8900000
 status: Available
 transmission: Automatic
 condition: Nigerian Used
