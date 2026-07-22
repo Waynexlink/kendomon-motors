@@ -1,7 +1,7 @@
 ---
 make: Hyundai
 model: Tucson
-year: 2016
+year: 2017
 price: 22000000
 status: Available
 transmission: Automatic
