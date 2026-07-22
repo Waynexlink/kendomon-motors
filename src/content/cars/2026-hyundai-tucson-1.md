@@ -1,8 +1,8 @@
 ---
 make: Hyundai
 model: Tucson
-year: 2017
-price: 2200000
+year: 2016
+price: 22000000
 status: Available
 transmission: Automatic
 condition: Foreign Used
