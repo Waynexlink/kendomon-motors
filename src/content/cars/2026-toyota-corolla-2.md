@@ -2,7 +2,7 @@
 make: "Toyota "
 model: Corolla
 year: 2016
-price: 14499999
+price: 14500000
 status: Available
 transmission: Automatic
 condition: Foreign Used
