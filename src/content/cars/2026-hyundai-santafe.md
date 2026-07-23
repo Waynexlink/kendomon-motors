@@ -3,7 +3,7 @@ make: Hyundai
 model: Santafe
 year: 2008
 price: 4500000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Nigerian Used
 location: Gwarinpa, Abuja
