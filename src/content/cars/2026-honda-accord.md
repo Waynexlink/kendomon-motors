@@ -2,7 +2,7 @@
 make: Honda
 model: Accord
 year: 2019
-price: 24499998
+price: 24500000
 status: Available
 transmission: Automatic
 condition: Foreign Used
