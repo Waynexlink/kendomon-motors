@@ -3,7 +3,7 @@ make: Mercedes-Benz
 model: C300
 year: 2013
 price: 14800000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Foreign Used
 location: Gwarinpa, Abuja
