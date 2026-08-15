@@ -3,7 +3,7 @@ make: Mercedes-Benz
 model: ML350
 year: 2014
 price: 23000000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Foreign Used
 location: Gwarinpa, Abuja
