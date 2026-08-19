@@ -3,7 +3,7 @@ make: Honda
 model: CRV
 year: 2013
 price: 15000000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Foreign Used
 location: Gwarinpa, Abuja
@@ -16,5 +16,5 @@ galleryImages:
   - /src/content/cars/whatsapp-image-2026-07-16-at-5.12.06-am.jpeg
   - /src/content/cars/whatsapp-image-2026-07-16-at-5.12.13-am.jpeg
 featured: false
-publishDate: 2026-07-16T10:13:00.000+01:00
+publishDate: 2026-08-19T13:44:00.000+01:00
 ---
