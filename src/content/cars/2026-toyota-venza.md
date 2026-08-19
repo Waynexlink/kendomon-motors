@@ -3,7 +3,7 @@ make: "Toyota "
 model: Venza
 year: 2011
 price: 17000000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Foreign Used
 location: Gwarinpa, Abuja
