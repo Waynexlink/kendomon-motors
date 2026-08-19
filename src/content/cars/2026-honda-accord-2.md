@@ -3,7 +3,7 @@ make: Honda
 model: Accord
 year: 2008
 price: 5700000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Nigerian Used
 location: Gwarinpa, Abuja
