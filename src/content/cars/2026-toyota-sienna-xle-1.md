@@ -3,7 +3,7 @@ make: "Toyota "
 model: Sienna XLE
 year: 2007
 price: 6000000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Foreign Used
 location: Gwarinpa, Abuja
@@ -16,5 +16,5 @@ galleryImages:
   - /src/content/cars/whatsapp-image-2026-08-01-at-6.50.03-pm-1-.jpeg
   - /src/content/cars/whatsapp-image-2026-08-01-at-6.49.40-pm-1-.jpeg
 featured: false
-publishDate: 2026-08-15T09:54:00.000+01:00
+publishDate: 2026-08-20T09:55:00.000+01:00
 ---
