@@ -16,5 +16,5 @@ galleryImages:
   - /src/content/cars/whatsapp-image-2026-07-14-at-3.24.41-pm.jpeg
   - /src/content/cars/whatsapp-image-2026-07-14-at-3.24.36-pm.jpeg
 featured: false
-publishDate: 2026-07-14T15:42:00.000+01:00
+publishDate: 2026-09-03T10:51:00.000+01:00
 ---
