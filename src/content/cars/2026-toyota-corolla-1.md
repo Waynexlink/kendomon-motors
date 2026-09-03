@@ -3,7 +3,7 @@ make: "Toyota "
 model: Corolla
 year: 2004
 price: 3300000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Nigerian Used
 location: Gwarinpa, Abuja
