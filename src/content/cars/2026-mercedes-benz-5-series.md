@@ -2,7 +2,7 @@
 make: Mercedes Benz
 model: 5 Series
 year: 2006
-price: 5800000
+price: 5500000
 status: Available
 transmission: Automatic
 condition: Nigerian Used
@@ -21,5 +21,5 @@ galleryImages:
   - /src/content/cars/img-20260824-wa0072.jpg
   - /src/content/cars/img-20260824-wa0078.jpg
 featured: false
-publishDate: 2026-08-24T14:30:00.000+01:00
+publishDate: 2026-09-04T13:13:00.000+01:00
 ---
