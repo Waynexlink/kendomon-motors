@@ -3,7 +3,7 @@ make: Toyota
 model: Hilux TRD
 year: 2021
 price: 38000000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Nigerian Used
 location: Gwarinpa, Abuja
@@ -21,5 +21,5 @@ galleryImages:
   - /src/content/cars/whatsapp-image-2026-09-05-at-7.11.24-am.jpeg
   - /src/content/cars/whatsapp-image-2026-09-05-at-7.11.16-am.jpeg
 featured: false
-publishDate: 2026-09-07T13:53:00.000+01:00
+publishDate: 2026-09-11T15:23:00.000+01:00
 ---
