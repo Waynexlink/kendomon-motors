@@ -3,7 +3,7 @@ make: Hyundai
 model: Veracruz
 year: 2011
 price: 6500000
-status: Available
+status: Sold
 transmission: Automatic
 condition: Foreign Used
 location: Gwarinpa, Abuja
@@ -20,5 +20,5 @@ galleryImages:
   - /src/content/cars/img-20260826-wa0031-1-.jpg
   - /src/content/cars/img-20260826-wa0035-1-1-.jpg
 featured: false
-publishDate: 2026-08-26T13:05:00.000+01:00
+publishDate: 2026-09-21T17:16:00.000+01:00
 ---
