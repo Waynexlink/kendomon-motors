@@ -399,19 +399,19 @@ const preloadedImage = allImages.length > 0 ? allImages[0] : undefined;
 
   // 2. Netlify function fires with the same eventId
   // This runs in the background - it does not slow down the WhatsApp redirect
-  fetch('/.netlify/functions/meta-capi', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      event_id: eventId,
-      event_name: 'Lead',
-      event_source_url: window.location.href,
-      fbp: getCookie('_fbp'),
-      fbc: getCookie('_fbc'),
-      client_user_agent: navigator.userAgent,
-      content_name: carName,
-    }),
-  }).catch(err => console.warn('[wa-modal] CAPI error:', err));
+  // fetch('/.netlify/functions/meta-capi', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({
+  //     event_id: eventId,
+  //     event_name: 'Lead',
+  //     event_source_url: window.location.href,
+  //     fbp: getCookie('_fbp'),
+  //     fbc: getCookie('_fbc'),
+  //     client_user_agent: navigator.userAgent,
+  //     content_name: carName,
+  //   }),
+  // }).catch(err => console.warn('[wa-modal] CAPI error:', err));
 
   // 3. Open WhatsApp immediately - does not wait for CAPI to finish
   const message = `Hello Kendomon Motors, I am interested in the ${carName}.\n\nInspection availability: ${answer}${utm}`;
