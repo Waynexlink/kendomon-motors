@@ -1,15 +1,16 @@
 ---
 import navData from "@data/navData.json";
 import { Icon } from "astro-icon/components";
+const isHome = Astro.url.pathname === "/";
 ---
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
-<header id="cs-navigation">
+<header id="cs-navigation" class:list={{ "cs-transparent": isHome }}>
   <div class="cs-container">
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
       <img
-        src="/assets/svgs/Kendomon-d.svg"
+        src={isHome ? "/assets/svgs/Kendomon.svg" : "/assets/svgs/Kendomon-d.svg"}
         alt="kendomon motors logo"
         width="210"
         height="29"
@@ -702,4 +703,52 @@ import { Icon } from "astro-icon/components";
       }
     }
   }
+    /*-- -------------------------- -->
+<---     Transparent Nav (Home) -->
+<--- -------------------------- -*/
+  #cs-navigation.cs-transparent {
+    background-color: transparent;
+    box-shadow: none;
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    .cs-li-link {
+      color: #ffffff;
+
+      &:before {
+        background: #ffffff;
+      }
+    }
+
+    .cs-line {
+      background-color: #ffffff;
+    }
+
+    &.cs-scrolled {
+      background-color: var(--primary);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 24px;
+    }
+  }
 </style>
+<script>
+  function initTransparentNav() {
+    const header = document.getElementById("cs-navigation");
+    if (!header || !header.classList.contains("cs-transparent")) return;
+
+    const SCROLL_THRESHOLD = 60;
+
+    function updateNavState() {
+      header.classList.toggle("cs-scrolled", window.scrollY > SCROLL_THRESHOLD);
+    }
+
+    updateNavState();
+    window.addEventListener("scroll", updateNavState, { passive: true });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTransparentNav);
+  } else {
+    initTransparentNav();
+  }
+</script>

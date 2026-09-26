@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
+import { getImage } from "astro:assets";
 
 export async function getStaticPaths() {
   const cars = await getCollection("cars");
@@ -44,6 +45,19 @@ const allImages = [
   )),
 ].filter(Boolean);
 
+const optimizedImages = await Promise.all(
+  allImages.map(async (img) => {
+    if (typeof img === "string") return img; // fallback for any legacy string paths
+    const optimized = await getImage({
+      src: img,
+      format: "webp",
+      width: Math.min(img.width, 1600),
+      quality: 78,
+    });
+    return optimized.src;
+  }),
+);
+
 // ✅ Use hero image as primary OG/Twitter image
 const preloadedImage = allImages.length > 0 ? allImages[0] : undefined;
 
@@ -51,16 +65,22 @@ const preloadedImage = allImages.length > 0 ? allImages[0] : undefined;
 
 <BaseLayout title={pageTitle} description={metaDescription}>
   <!-- ✅ Preload gallery images for faster switching -->
-  <link rel="preload" as="image" href={allImages[0]?.src ?? (typeof allImages[0] === 'string' ? allImages[0] : '')} slot="head" />
-  {allImages.slice(1, 4).map(img => (
-    <link 
-      rel="preload" 
-      as="image" 
-      href={typeof img === "string" ? img : img?.src?.startsWith("/") ? img.src : `/` + img?.src} 
-      slot="head" 
-    />
-  ))}
+  <!-- Preload only optimized gallery images -->
+<link
+  rel="preload"
+  as="image"
+  href={optimizedImages[0] ?? ""}
+  slot="head"
+/>
 
+{optimizedImages.slice(1, 4).map((src) => (
+  <link
+    rel="preload"
+    as="image"
+    href={src}
+    slot="head"
+  />
+))}
   <section class="car-detail">
     <div class="detail-container">
       <!-- Title, Price & CTA Section - Immediately after nav -->
@@ -95,14 +115,14 @@ const preloadedImage = allImages.length > 0 ? allImages[0] : undefined;
       <div class="gallery-section">
         <div class="main-image-container">
           <!-- Main image: use a plain <img> so JS swapping is simple and reliable -->
-          <img
-            id="mainImage"
-            class="main-image"
-            src={allImages[0]?.src ?? (typeof allImages[0] === 'string' ? allImages[0] : '')}
-            alt={car.data.heroImageAlt ?? pageTitle}
-            loading="eager"
-            width="1200"
-          />
+         <img
+  id="mainImage"
+  class="main-image"
+  src={optimizedImages[0] ?? ""}
+  alt={car.data.heroImageAlt ?? pageTitle}
+  loading="eager"
+  width="1200"
+/>
           
           {allImages.length > 1 && (
             <button class="nav-arrow nav-arrow-prev" id="prevBtn" aria-label="Previous image">
@@ -122,17 +142,11 @@ const preloadedImage = allImages.length > 0 ? allImages[0] : undefined;
           <div class="thumbnails-container">
             {allImages.map((image, index) => (
               <button
-                class={`thumbnail ${index === 0 ? 'thumbnail-active' : ''}`}
-                data-index={index}
-                data-fullsrc={
-                  typeof image === "string"
-                    ? image
-                    : image?.src?.startsWith("/") 
-                      ? image.src 
-                      : `/` + image?.src
-                }
-                type="button"
-              >
+    class={`thumbnail ${index === 0 ? 'thumbnail-active' : ''}`}
+    data-index={index}
+    data-fullsrc={optimizedImages[index]}
+    type="button"
+  >
                 <Picture
                   src={image}
                   alt={`${pageTitle} - View ${index + 1}`}

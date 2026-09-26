@@ -1,6 +1,32 @@
 ---
-import CarCard from "./CarCard.jsx"; // adjust the path if needed
+import CarCard from "./CarCard.jsx";
+import { getImage } from "astro:assets";
+
 const { cars } = Astro.props;
+
+const cardsData = await Promise.all(
+  cars.map(async (car) => {
+    const optimizedHero = await getImage({
+      src: car.data.heroImage,
+      format: "webp",
+      width: Math.min(car.data.heroImage.width, 600),
+      quality: 75,
+    });
+
+    return {
+      slug: car.id,
+      heroImage: { src: optimizedHero.src },
+      heroImageAlt: car.data.heroImageAlt,
+      price: car.data.price,
+      year: car.data.year,
+      make: car.data.make,
+      model: car.data.model,
+      transmission: car.data.transmission,
+      condition: car.data.condition,
+      status: car.data.status || "Available",
+    };
+  }),
+);
 ---
 
 <section id="mini-inventory">
@@ -16,19 +42,9 @@ const { cars } = Astro.props;
 
     <div class="cars-grid">
       {
-        cars.map((car) => (
+        cardsData.map((car) => (
           <CarCard
-            car={{
-              slug: car.id,
-              heroImage: car.data.heroImage,
-              heroImageAlt: car.data.heroImageAlt,
-              price: car.data.price,
-              year: car.data.year,
-              make: car.data.make,
-              model: car.data.model,
-              transmission: car.data.transmission,
-              condition: car.data.condition,
-            }}
+            car={car}
           />
         ))
       }

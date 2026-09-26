@@ -1,0 +1,10 @@
+[
+  { "name": "Toyota", "file": "toyota.svg" },
+  { "name": "Honda", "file": "honda.svg" },
+  { "name": "Nissan", "file": "nissan.svg" },
+  { "name": "Mercedes-Benz", "file": "mercedes.svg" },
+  { "name": "BMW", "file": "bmw.svg" },
+  { "name": "Audi", "file": "audi.svg" },
+  { "name": "Volkswagen", "file": "volkswagen.svg" },
+  { "name": "Hyundai", "file": "hyundai.svg" }
+]

@@ -41,6 +41,28 @@
   /* Prevent it from blocking clicks */
   pointer-events: none;
 }
+/* ===================================
+   DARK OVERLAY
+   Sits above the image, below content
+   =================================== */
+.heroContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  /* Same clip shape as the image, so the overlay matches it exactly */
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
+
+  z-index: 0;
+  pointer-events: none;
+}
 
 /* ===================================
    CONTENT AREA
@@ -96,7 +118,7 @@
   padding: 0.75rem 0;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
   font-size: 1rem;
   color: #64748b;
   text-align: left;
@@ -264,6 +286,9 @@
     /* Adjust focal point for mobile */
     background-position: center 30%;
   }
+    .heroContainer::after {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 98%, 0 92%);
+  }
 
   .heroContent {
     padding: 0 1rem;
@@ -293,6 +318,9 @@
   }
 
   .heroContainer::before {
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 99%, 0 94%);
+  }
+    .heroContainer::after {
     clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 99%, 0 94%);
   }
 

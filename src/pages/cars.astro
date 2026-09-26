@@ -58,24 +58,30 @@ const sortedCars = filteredCars.sort((a, b) => {
 });
 
 // Prepare car data for the React component
-const carsData = sortedCars.map((car) => {
-  const heroImageSrc = car.data.heroImage.src;
+const carsData = await Promise.all(
+  sortedCars.map(async (car) => {
+    const optimizedHero = await getImage({
+      src: car.data.heroImage,
+      format: "webp",
+      width: Math.min(car.data.heroImage.width, 600),
+      quality: 75,
+    });
 
-  return {
-    slug: car.id,
-    make: car.data.make,
-    model: car.data.model,
-    year: car.data.year,
-    price: car.data.price,
-    transmission: car.data.transmission,
-    heroImage: { src: heroImageSrc },
-    heroImageAlt: car.data.heroImageAlt,
-    condition: car.data.condition,
-    featured: car.data.featured,
-    status: car.data.status || "Available",
-  };
-});
-
+    return {
+      slug: car.id,
+      make: car.data.make,
+      model: car.data.model,
+      year: car.data.year,
+      price: car.data.price,
+      transmission: car.data.transmission,
+      heroImage: { src: optimizedHero.src },
+      heroImageAlt: car.data.heroImageAlt,
+      condition: car.data.condition,
+      featured: car.data.featured,
+      status: car.data.status || "Available",
+    };
+  }),
+);
 // Get unique makes for filter dropdown
 const uniqueMakes = [...new Set(allCars.map((car) => car.data.make))].sort();
 
